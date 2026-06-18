@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>个人简介 | 交互式作品主页</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="progress" id="progress"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#intro" aria-label="回到首页">李逢春</a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#photos">图片</a>
+        <a href="#videos">视频</a>
+        <a href="#experience">经历</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <div class="top-actions">
+        <button class="edit-toggle" id="editToggle" type="button" aria-pressed="false">编辑</button>
+        <button class="edit-add" id="editAdd" type="button">添加文字块</button>
+        <button class="edit-reset" id="editReset" type="button">重置文字</button>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="切换主题" title="切换主题">
+          <span aria-hidden="true">◐</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="intro" aria-labelledby="heroTitle">
+        <video class="hero-image hero-video" autoplay muted loop playsinline poster="./assets/hero-portrait.webp" aria-label="李逢春首页视频">
+          <source src="./assets/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">新媒体运营 · 视觉内容 · 电商转化</p>
+          <h1 id="heroTitle">李逢春</h1>
+          <p class="lead">
+            2 年工作经验，求职方向为新媒体运营。擅长从视觉内容切入业务，
+            把选题、脚本、拍摄、剪辑、商品上新、私域沟通和订单转化串成可落地流程。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#videos">查看作品</a>
+            <a class="secondary-action" href="#experience">浏览经历</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-band" aria-label="个人优势">
+        <div class="advantage-frame">
+          <div class="advantage-index">
+            <p class="eyebrow">Profile Strength</p>
+            <h2>个人优势</h2>
+            <span>01 / Resume</span>
+          </div>
+          <div class="advantage-copy">
+            <p>
+              从摄影与视觉内容切入电商业务，靠自主学习逐步承担买手店选品跟进、商品上新、内容发布、直播配合、私域维护、客户沟通与订单转化等环节。
+              具备审美判断、结构化学习、强执行和抗压推进能力，能在人员少、任务杂、节奏快的环境中快速补位并把事情落地。
+            </p>
+            <div class="advantage-points">
+              <article>
+                <strong>自主学习强</strong>
+                <span>非电商专业出身，从摄影 / 修图岗位起步，主动学习货品逻辑、平台内容、私域转化和基础运营流程。</span>
+              </article>
+              <article>
+                <strong>抗压执行强</strong>
+                <span>面对高客单、高细节、高时效的服装上新场景，能同时推进拍摄、修图、上架、推送、客户沟通和反馈处理。</span>
+              </article>
+              <article>
+                <strong>内容转化强</strong>
+                <span>独立运营千粉级摄影抖音账号，掌握选题、脚本、拍摄、剪辑、精修、发布与复盘闭环。</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-panel" aria-labelledby="aboutTitle">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2 id="aboutTitle">来斯道内容运营工作与业绩</h2>
+        </div>
+        <div class="about-layout">
+          <p class="about-lead">
+            在海南来斯道贸易公司服务 Lai store 买手店业务，围绕高客单服装与配饰完成从商品视觉到内容发布、
+            私域沟通和订单转化的全链路执行。负责服装搭配、模特拍摄、后期修图、商品上新视觉、口播视频脚本拍摄剪辑、
+            内容推送、直播协作、客户维护与成交跟进。
+          </p>
+          <div class="strength-grid">
+            <article class="strength-card">
+              <span>01</span>
+              <h3>全链路执行</h3>
+              <p>参与选品、到货验货、货损反馈、挂拍上架、内容推送、直播协作和客户下单转化，沉淀“选品-拍摄-上新-推送-沟通-成交”流程。</p>
+            </article>
+            <article class="strength-card">
+              <span>02</span>
+              <h3>商品视觉</h3>
+              <p>服务 le maire、the row、ralph lauren、SISSEL EDELBO、dragon、sessun、soeur 等品牌，完成 1k-1w 高客单商品拍摄、修图与上新表达。</p>
+            </article>
+            <article class="strength-card">
+              <span>03</span>
+              <h3>业绩增长</h3>
+              <p>淘宝店铺 GMV 稳定 40-50W/月，Listing 更新后带来约 30% 业绩增长，并通过私域维护和客户转化提升成交效率。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="photos" aria-labelledby="photosTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Gallery</p>
+          <h2 id="photosTitle">照片作品集</h2>
+        </div>
+        <div class="portfolio-collections">
+          <article class="portfolio-collection">
+            <header class="collection-head">
+              <span>Portrait</span>
+              <h3>人物穿搭</h3>
+            </header>
+            <div class="media-grid photo-grid">
+              <button class="media-card photo-card featured-photo" style="--photo: url('./assets/portfolio/portfolio-01.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-01.webp" aria-label="Open portrait image 01"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-03.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-03.webp" aria-label="Open portrait image 02"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-04.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-04.webp" aria-label="Open portrait image 03"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card wide-photo" style="--photo: url('./assets/portfolio/portfolio-07.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-07.webp" aria-label="Open portrait image 04"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-08.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-08.webp" aria-label="Open portrait image 05"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card tall-photo" style="--photo: url('./assets/portfolio/portfolio-10.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-10.webp" aria-label="Open portrait image 06"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-11.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-11.webp" aria-label="Open portrait image 07"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-12.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-12.webp" aria-label="Open portrait image 08"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card wide-photo" style="--photo: url('./assets/portfolio/portfolio-13.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-13.webp" aria-label="Open portrait image 09"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-16.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-16.webp" aria-label="Open portrait image 10"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-19.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-19.webp" aria-label="Open portrait image 11"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card tall-photo" style="--photo: url('./assets/portfolio/portfolio-21.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-21.webp" aria-label="Open portrait image 12"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-22.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-22.webp" aria-label="Open portrait image 13"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-23.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-23.webp" aria-label="Open portrait image 14"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card wide-photo" style="--photo: url('./assets/portfolio/portfolio-24.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-24.webp" aria-label="Open portrait image 15"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-26.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-26.webp" aria-label="Open portrait image 16"><span class="photo-fill"></span></button>
+            </div>
+          </article>
+          <article class="portfolio-collection">
+            <header class="collection-head">
+              <span>Object</span>
+              <h3>商品静物</h3>
+            </header>
+            <div class="media-grid photo-grid object-grid">
+              <button class="media-card photo-card featured-photo" style="--photo: url('./assets/portfolio/portfolio-02.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-02.webp" aria-label="Open object image 01"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-05.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-05.webp" aria-label="Open object image 02"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-06.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-06.webp" aria-label="Open object image 03"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card wide-photo" style="--photo: url('./assets/portfolio/portfolio-09.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-09.webp" aria-label="Open object image 04"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-14.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-14.webp" aria-label="Open object image 05"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card tall-photo" style="--photo: url('./assets/portfolio/portfolio-15.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-15.webp" aria-label="Open object image 06"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-17.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-17.webp" aria-label="Open object image 07"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-18.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-18.webp" aria-label="Open object image 08"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card wide-photo" style="--photo: url('./assets/portfolio/portfolio-20.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-20.webp" aria-label="Open object image 09"><span class="photo-fill"></span></button>
+              <button class="media-card photo-card" style="--photo: url('./assets/portfolio/portfolio-25.webp')" type="button" data-media-type="image" data-src="./assets/portfolio/portfolio-25.webp" aria-label="Open object image 10"><span class="photo-fill"></span></button>
+            </div>
+          </article>
+          <aside class="portfolio-note" aria-label="作品集说明">
+            <span>淘宝店铺 GMV 40-50W/月</span>
+            <span>Listing 更新后带来约 30% 业绩增长</span>
+            <span>0-1 开拓小红书平台客户</span>
+            <span>通过视频混剪和摄影内容图文触达客户</span>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section toned" id="videos" aria-labelledby="videosTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Content Creation</p>
+          <h2 id="videosTitle">内容创作视频</h2>
+        </div>
+        <div class="video-grid">
+          <article class="media-card video-card featured" style="--cover: url('./assets/video-cover-01.jpg')" tabindex="0" role="button" data-media-type="video" data-title="小红书视频作品 01" data-video-url="https://www.xiaohongshu.com/explore/6937d8740000000019025f02?xsec_token=ABpo6K5PhTcagXBmPXAVwv4QD30QkYbq0p5uLO2paZfIA=&amp;xsec_source=pc_search">
+            <span class="video-lines"></span>
+            <span class="video-number">01</span>
+            <span class="play-dot" aria-hidden="true"></span>
+            <div class="video-copy">
+              <p class="video-kicker">Featured Work</p>
+              <h3>小红书视频作品 01</h3>
+              <p>主推视频位，展示内容选题、镜头节奏、审美表达和账号风格。</p>
+            </div>
+            <a class="video-link" href="https://www.xiaohongshu.com/explore/6937d8740000000019025f02?xsec_token=ABpo6K5PhTcagXBmPXAVwv4QD30QkYbq0p5uLO2paZfIA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">打开原视频</a>
+          </article>
+          <article class="media-card video-card amber" style="--cover: url('./assets/video-cover-02.jpg')" tabindex="0" role="button" data-media-type="video" data-title="小红书视频作品 02" data-video-url="https://www.xiaohongshu.com/explore/69807dcc000000002200a9c2?xsec_token=ABuYWObUD-xv967g9tBPCTQZ9WgBgjIXMfJuCYLe6TWUk=&amp;xsec_source=pc_search">
+            <span class="video-lines"></span>
+            <span class="video-number">02</span>
+            <span class="play-dot" aria-hidden="true"></span>
+            <div class="video-copy">
+              <p class="video-kicker">Storytelling</p>
+              <h3>小红书视频作品 02</h3>
+              <p>展示脚本组织、视频混剪、画面审美和平台内容理解能力。</p>
+            </div>
+            <a class="video-link" href="https://www.xiaohongshu.com/explore/69807dcc000000002200a9c2?xsec_token=ABuYWObUD-xv967g9tBPCTQZ9WgBgjIXMfJuCYLe6TWUk=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">打开原视频</a>
+          </article>
+          <article class="media-card video-card green" style="--cover: url('./assets/video-cover-03.jpg')" tabindex="0" role="button" data-media-type="video" data-title="小红书视频作品 03" data-video-url="https://www.xiaohongshu.com/explore/6983024500000000220233d1?xsec_token=ABw7L4fadkXxpwp6XWxsgslhbA-A5r1X2ut82m9aJIL_o=&amp;xsec_source=pc_search">
+            <span class="video-lines"></span>
+            <span class="video-number">03</span>
+            <span class="play-dot" aria-hidden="true"></span>
+            <div class="video-copy">
+              <p class="video-kicker">Campaign</p>
+              <h3>小红书视频作品 03</h3>
+              <p>展示品牌内容包装、产品卖点表达和可发布内容落地能力。</p>
+            </div>
+            <a class="video-link" href="https://www.xiaohongshu.com/explore/6983024500000000220233d1?xsec_token=ABw7L4fadkXxpwp6XWxsgslhbA-A5r1X2ut82m9aJIL_o=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">打开原视频</a>
+          </article>
+          <article class="media-card video-card douyin" style="--cover: url('./assets/video-cover-04.jpg')" tabindex="0" role="button" data-media-type="video" data-title="抖音内容创作 01" data-video-url="https://v.douyin.com/5uCvlDCeQis/">
+            <span class="video-lines"></span>
+            <span class="video-number">04</span>
+            <span class="play-dot" aria-hidden="true"></span>
+            <div class="video-copy">
+              <p class="video-kicker">Douyin Creation</p>
+              <h3>妈咪妈咪哄</h3>
+              <p>韦斯安德森式色彩、电影感构图与治愈情绪表达，呈现夏日生活里的等待与美好。</p>
+            </div>
+            <a class="video-link" href="https://v.douyin.com/5uCvlDCeQis/" target="_blank" rel="noreferrer">打开原视频</a>
+          </article>
+          <article class="media-card video-card douyin" style="--cover: url('./assets/video-cover-05.jpg')" tabindex="0" role="button" data-media-type="video" data-title="抖音内容创作 02" data-video-url="https://v.douyin.com/9vaAxsq5eKU/">
+            <span class="video-lines"></span>
+            <span class="video-number">05</span>
+            <span class="play-dot" aria-hidden="true"></span>
+            <div class="video-copy">
+              <p class="video-kicker">Lifestyle Film</p>
+              <h3>风是什么形状</h3>
+              <p>把生活拍成电影，用青春光影、夏天颜色和漫游感镜头完成氛围型短视频表达。</p>
+            </div>
+            <a class="video-link" href="https://v.douyin.com/9vaAxsq5eKU/" target="_blank" rel="noreferrer">打开原视频</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split" id="experience" aria-labelledby="experienceTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Experience</p>
+          <h2 id="experienceTitle">经历分区</h2>
+        </div>
+        <div class="filters" aria-label="经历筛选">
+          <button class="filter active" type="button" data-filter="all">全部</button>
+          <button class="filter" type="button" data-filter="work">工作</button>
+          <button class="filter" type="button" data-filter="project">项目</button>
+          <button class="filter" type="button" data-filter="education">教育</button>
+        </div>
+        <div class="timeline" id="timeline">
+          <article class="timeline-item" data-kind="work">
+            <time>2025.10 - 2026.05</time>
+            <h3>海南来斯道贸易公司 · 内容运营</h3>
+            <p>服务 Lai store 买手店业务，负责服装搭配、模特拍摄、后期修图、商品上新视觉、口播视频脚本拍摄剪辑、内容推送、直播协作、私域维护和客户转化。</p>
+            <ul class="detail-list">
+              <li>主营 le maire、the row、ralph lauren、SISSEL EDELBO、dragon、sessun、soeur 等品牌。</li>
+              <li>服务 1k-1w 高客单商品，沉淀“选品-拍摄-上新-推送-沟通-成交”执行流程。</li>
+              <li>淘宝店铺 GMV 40-50W/月，Listing 更新后带来约 30% 业绩增长。</li>
+            </ul>
+          </article>
+          <article class="timeline-item" data-kind="work">
+            <time>2024.09 - 2025.06</time>
+            <h3>儋州黄冈实验学校 · 物理教师</h3>
+            <p>首年承担毕业班物理教学，围绕中考目标拆解知识点、训练路径和复盘节奏。</p>
+            <ul class="detail-list">
+              <li>2025 年中考任教学科成绩位列儋州市第二。</li>
+              <li>获得校级优质公开课、优秀教师表彰。</li>
+            </ul>
+          </article>
+          <article class="timeline-item" data-kind="work">
+            <time>2022.05 - 2023.03</time>
+            <h3>元灵设计工作室 · 新媒体运营</h3>
+            <p>与教授、校友共创设计工作室，负责抖音平台内容测试、运营复盘和账号内容方向迭代。</p>
+          </article>
+          <article class="timeline-item" data-kind="project">
+            <time>项目经历</time>
+            <h3>自运营摄影账号 LIFORTU</h3>
+            <p>独立完成选题、脚本、拍摄、剪辑、PS 精修和发布，围绕校园人群与“素人改造”内容自然增长至千粉级。</p>
+          </article>
+          <article class="timeline-item" data-kind="education">
+            <time>2020 - 2024</time>
+            <h3>湖南科技学院 · 本科 · 物理学</h3>
+            <p>理学院篮球队队长，参加摄影社团视频拍摄；创新创业大赛校赛一等奖。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section skills" aria-labelledby="skillsTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Skills</p>
+          <h2 id="skillsTitle">能力标签</h2>
+        </div>
+        <div class="skill-cloud">
+          <span>AI 视频生成</span>
+          <span>脚本策划</span>
+          <span>分镜设计</span>
+          <span>商品拍摄</span>
+          <span>Photoshop</span>
+          <span>Lightroom</span>
+          <span>剪映 / CapCut</span>
+          <span>达芬奇</span>
+          <span>小红书运营</span>
+          <span>内容运营</span>
+          <span>私域转化</span>
+          <span>普通话二乙</span>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contactTitle">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contactTitle">联系入口</h2>
+          <p>求职意向：新媒体运营 · 期望城市：深圳</p>
+          <p>电话：18889405713 · 邮箱：1572669330@qq.com</p>
+        </div>
+        <div class="contact-actions">
+          <a class="primary-action" href="https://zcn3gnvft4ea.feishu.cn/wiki/UiDQw3naticsHAkWWTEcRXfkn3d?from=from_copylink" target="_blank" rel="noreferrer">查看作品集</a>
+          <a class="outline-action" href="https://www.zhipin.com/web/geek/resume" target="_blank" rel="noreferrer">打开原简历</a>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="modal" id="mediaModal" aria-labelledby="modalTitle">
+      <button class="icon-button close-button" id="modalClose" type="button" aria-label="关闭" title="关闭">×</button>
+      <div class="modal-stage" id="modalStage"></div>
+      <button class="gallery-nav gallery-prev" id="modalPrev" type="button" aria-label="上一张">‹</button>
+      <button class="gallery-nav gallery-next" id="modalNext" type="button" aria-label="下一张">›</button>
+      <h3 id="modalTitle">媒体标题</h3>
+    </dialog>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
