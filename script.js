@@ -12,7 +12,7 @@ const modalNext = document.getElementById("modalNext");
 const mediaCards = document.querySelectorAll(".media-card");
 const imageCards = Array.from(mediaCards).filter((card) => card.dataset.mediaType === "image");
 const revealTargets = document.querySelectorAll(
-  ".advantage-index, .advantage-copy > p, .advantage-points article, .section-heading, .about-lead, .strength-card, .media-card, .filters, .timeline-item, .skill-cloud span, .contact > *"
+  ".advantage-index, .advantage-copy > p, .advantage-points article, .section-heading, .about-lead, .strength-card, .media-card, .social-hero, .social-profile, .filters, .timeline-item, .skill-cloud span, .contact > *"
 );
 let activeImageIndex = -1;
 const editorEnabled = new URLSearchParams(window.location.search).get("edit") === "1";
