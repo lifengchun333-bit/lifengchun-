@@ -15,6 +15,7 @@ const revealTargets = document.querySelectorAll(
   ".advantage-index, .advantage-copy > p, .advantage-points article, .section-heading, .about-lead, .strength-card, .media-card, .filters, .timeline-item, .skill-cloud span, .contact > *"
 );
 let activeImageIndex = -1;
+const editorEnabled = new URLSearchParams(window.location.search).get("edit") === "1";
 
 const savedTheme = localStorage.getItem("profile-theme");
 if (savedTheme === "dark") {
@@ -25,6 +26,134 @@ themeToggle.addEventListener("click", () => {
   body.classList.toggle("dark");
   localStorage.setItem("profile-theme", body.classList.contains("dark") ? "dark" : "light");
 });
+
+function setupEditorPanel() {
+  const storageKey = "profile-site-edits-v2";
+  const customBlocksKey = "profile-site-custom-blocks-v2";
+  const editableSelectors = [
+    ".brand",
+    ".eyebrow",
+    "h1",
+    "h2",
+    "h3",
+    "p",
+    "li",
+    ".advantage-index > span",
+    ".advantage-points strong",
+    ".advantage-points span",
+    ".skill-cloud span",
+    ".video-kicker",
+  ];
+
+  const editorPanel = document.createElement("aside");
+  editorPanel.className = "editor-panel";
+  editorPanel.innerHTML = `
+    <p>编辑模式</p>
+    <div>
+      <button class="editor-button" id="editToggle" type="button" aria-pressed="false">开始编辑</button>
+      <button class="editor-button" id="editAdd" type="button">添加文字块</button>
+      <button class="editor-button editor-reset" id="editReset" type="button">重置</button>
+    </div>
+  `;
+  document.body.appendChild(editorPanel);
+
+  const editToggle = document.getElementById("editToggle");
+  const editAdd = document.getElementById("editAdd");
+  const editReset = document.getElementById("editReset");
+  const storedEdits = JSON.parse(localStorage.getItem(storageKey) || "{}");
+  const storedCustomBlocks = JSON.parse(localStorage.getItem(customBlocksKey) || "[]");
+  let editableNodes = Array.from(document.querySelectorAll(editableSelectors.join(","))).filter((node) => {
+    return node.closest("main, header") && !node.closest("a, button, dialog, .filters, .editor-panel");
+  });
+
+  function saveEditableText(node) {
+    const id = node.dataset.editable;
+    if (!id) return;
+    const edits = JSON.parse(localStorage.getItem(storageKey) || "{}");
+    edits[id] = node.innerText;
+    localStorage.setItem(storageKey, JSON.stringify(edits));
+  }
+
+  function saveCustomBlocks() {
+    const blocks = Array.from(document.querySelectorAll(".custom-text-block")).map((block) => ({
+      id: block.dataset.editable,
+      text: block.innerText,
+    }));
+    localStorage.setItem(customBlocksKey, JSON.stringify(blocks));
+  }
+
+  function registerEditable(node, index = editableNodes.length) {
+    const id = node.dataset.editable || node.id || `editable-${index}`;
+    node.dataset.editable = id;
+    if (Object.prototype.hasOwnProperty.call(storedEdits, id)) {
+      node.innerText = storedEdits[id];
+    }
+    node.addEventListener("input", () => {
+      saveEditableText(node);
+      saveCustomBlocks();
+    });
+    node.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        node.blur();
+      }
+    });
+  }
+
+  function createCustomBlock(block = {}) {
+    const element = document.createElement("div");
+    element.className = "custom-text-block";
+    element.dataset.editable = block.id || `custom-${Date.now()}-${Math.round(Math.random() * 1000)}`;
+    element.innerText = block.text || "在这里输入新的文字内容";
+    return element;
+  }
+
+  function setEditMode(enabled) {
+    body.classList.toggle("editing", enabled);
+    editToggle.classList.toggle("is-active", enabled);
+    editToggle.setAttribute("aria-pressed", String(enabled));
+    editToggle.textContent = enabled ? "完成编辑" : "开始编辑";
+    editableNodes.forEach((node) => {
+      node.contentEditable = String(enabled);
+      node.spellcheck = false;
+    });
+  }
+
+  storedCustomBlocks.forEach((block) => {
+    const target = document.querySelector("#contact") || document.querySelector("main");
+    const element = createCustomBlock(block);
+    target.parentNode.insertBefore(element, target);
+    editableNodes.push(element);
+  });
+
+  editableNodes.forEach((node, index) => registerEditable(node, index));
+
+  editToggle.addEventListener("click", () => {
+    setEditMode(!body.classList.contains("editing"));
+  });
+
+  editAdd.addEventListener("click", () => {
+    const target = document.querySelector("#contact") || document.querySelector("main");
+    const block = createCustomBlock();
+    target.parentNode.insertBefore(block, target);
+    editableNodes.push(block);
+    registerEditable(block);
+    setEditMode(true);
+    block.focus();
+    saveCustomBlocks();
+  });
+
+  editReset.addEventListener("click", () => {
+    const confirmed = window.confirm("确定清除本机浏览器里保存的文字修改吗？");
+    if (!confirmed) return;
+    localStorage.removeItem(storageKey);
+    localStorage.removeItem(customBlocksKey);
+    window.location.reload();
+  });
+}
+
+if (editorEnabled) {
+  setupEditorPanel();
+}
 
 function updateScrollEffects() {
   const scrollTop = window.scrollY;
@@ -109,6 +238,8 @@ const showAdjacentImage = (direction) => {
 
 mediaCards.forEach((card) => {
   const openCard = () => {
+    if (body.classList.contains("editing")) return;
+
     const type = card.dataset.mediaType;
     const title = card.dataset.title || "媒体预览";
     const videoUrl = card.dataset.videoUrl;
